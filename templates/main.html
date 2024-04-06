@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scheme Recommendation</title>
+  <style>
+    body {
+      background-color: #F2F8FF;
+    }
+
+    h1 {
+      color: #00468B;
+      font-size: 35px;
+      margin-top: 50px;
+      margin-left: 40px;
+    }
+
+    .input-group {
+      display: flex; /* Use flexbox for alignment */
+      align-items: center;
+      margin-top: 50px;
+      margin-left: 20px;
+    }
+
+    .nested-input-group {
+      display: flex;
+      flex-direction: column;
+      margin-left: 20px;
+    }
+
+    label {
+      font-size: 18px;
+      color: #09101D;
+      margin-left: 1px; /* Reduce margin for closer labels */
+      margin-right: 10px;
+      margin-bottom:10px;
+    }
+
+    input[type="text"],
+    select {
+      padding: 10px ;
+      font-size: 16px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      width : 200px;
+    }
+
+    input[type="submit"] {
+      margin-left: 20px; /* Add margin to the left */
+      background-color: #006FDD; /* Background color */
+      color: white; /* Text color */
+      padding: 10px 20px ; /* Padding for better appearance */
+      border: none; /* Remove default border */
+      border-radius: 5px; /* Apply border radius */
+      margin-top:30px;
+      cursor: pointer; /* Change cursor to pointer on hover */
+    }
+
+
+    /* Borders for table and table rows */
+    table {
+      border-collapse: collapse;
+      width: 83%;
+      margin-top: 30px;
+      margin-left: 40px;
+      border: 1px solid #ddd;
+      border-radius: 15px;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 12px;
+      text-align: left;
+      background-color: white;
+    }
+
+    th {
+      background-color: #007FFF;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <h1>GovGenius</h1>
+  <form action="/recommend" method="POST">
+    <div class="input-group">
+      <div class="nested-input-group">
+        <label for="query">Enter Your Query</label>
+        <input type="text" id="query" name="query" placeholder="Enter your query">
+      </div>
+      <div class="nested-input-group">
+        <label for="gender" class="gender-label">Select Gender</label>
+        <select id="gender" name="gender">
+          <option value="All">All</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+        </select>
+      </div>
+      <div class="nested-input-group">
+        <label for="caste" class="caste-label">Select Caste</label>
+        <select id="caste" name="caste">
+          <option value="All">All</option>
+          <option value="General">General</option>
+          <option value="Scheduled Caste (SC)">Scheduled Caste (SC)</option>
+          <option value="Scheduled Tribe (ST)">Scheduled Tribe (ST)</option>
+          <option value="Other Backward Class (OBC)">Other Backward Class (OBC)</option>
+          <option value="Particularly Vulnerable Tribal Group (PVTG)">Particularly Vulnerable Tribal Group (PVTG)</option>
+        </select>
+      </div>
+      <div class="nested-input-group">
+        <label for="state" class="state-label">Select State</label>
+        <select id="state" name="state">
+          <option value="All">All</option>
+          <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+          <option value="Manipur">Manipur</option>
+          <option value="Assam">Assam</option>
+          <option value="Meghalaya">Meghalaya</option>
+          <option value="Sikkim">Sikkim</option>
+          <option value="Nagaland">Nagaland</option>
+          <option value="Tripura">Tripura</option>
+          <option value="Mizoram">Mizoram</option>
+          <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+        </select>
+      </div>
+      <div class="nested-input-group">
+        <label for="student" class="student-label">Are you a Student?</label>
+        <select id="student" name="student">
+          <option value="All">All</option>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
+      </div>
+      <input type="submit" value="Search">
+    </div>
+  </form>
+  {% if recommendations %}
+  <table>
+    <tr>
+      <th>Sr No</th>
+      <th>Recommended Schemes</th>
+      <th>Info</th>
+    </tr>
+    {% for recommendation in recommendations %}
+    <tr>
+      <td>{{ recommendation[0] }}</td>
+      <td>{{ recommendation[1] }}</td>
+      <td><a href="{{ url_for('details', scheme_name=recommendation[1]) }}"><img src="{{ url_for('static', filename='info.png') }}" alt="Image"></a></td> 
+
+   
+    </tr>
+    {% endfor %}
+  </table>
+  {% endif %}
+</body>
+</html>

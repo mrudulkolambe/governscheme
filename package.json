@@ -1,0 +1,16 @@
+{
+  "name": "schemesense",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.19.2",
+    "fs": "^0.0.1-security",
+    "ml-distance": "^4.0.1",
+    "natural": "^6.12.0"
+  }
+}

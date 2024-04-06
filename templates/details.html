@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ scheme_data.scheme_name }} Details</title>
+  <style>
+    body {
+      background-color: #F2F8FF;
+    }
+
+    h1 {
+      color: #00468B;
+      font-size: 35px;
+      margin-top: 50px;
+      margin-left: 40px;
+    }
+
+    label {
+      font-size: 18px;
+      color: #002147; /* Text color */
+      margin-left: 1px; /* Reduce margin for closer labels */
+      margin-right: 10px;
+      margin-bottom: 5px; /* Adjust margin below label */
+    }
+
+    p {
+      font-size: 16px;
+      color: #002147; /* Text color */
+      margin-left: 20px; /* Indent details */
+    }
+
+    div{
+        margin-left:20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>GovGenius</h1>
+  <div>
+    <p><strong>Scheme Name:</strong><br>{{ scheme_data.scheme_name }}</p>
+    <p><strong>Scheme Link:</strong><br><a href="{{ scheme_data.scheme_link }}" target="_blank">{{ scheme_data.scheme_link }}</a></p>
+    <p><strong>Details:</strong><br>{{ scheme_data.details }}</p>
+    <p><strong>Benefits:</strong><br>{{ scheme_data.benefits }}</p>
+    <p><strong>Eligibility Criteria:</strong><br>{{ scheme_data.eligibility_criteria }}</p>
+    <p><strong>Application Process:</strong><br>{{ scheme_data.application_process }}</p>
+    <p><strong>Documents Required:</strong><br>{{ scheme_data.documents_required }}</p>
+    <p><strong>Summary:</strong><br>{{ scheme_data.summary }}</p>
+    <!-- Add more details to display -->
+  </div>
+</body>
+</html>
+

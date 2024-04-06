@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SchemeSense - Introduction</title>
+  <style>
+    body {
+      background-color: #F2F8FF;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .beginButton {
+        background-color: #006FDD;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        margin-top:20px;
+        cursor: pointer;
+      }
+      
+      .searchButton {
+        background-color: #006FDD;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-bottom: 20px; /* Add margin at the bottom */
+        margin-right: 20px; /* Add margin to the button */
+    }
+
+    .lcontainer {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .title {
+      margin-top: 120px;
+      text-align: center;
+    }
+
+    .tagline {
+      font-size: 24px;
+      color: #002147;
+    }
+
+    .description {
+      font-size: 18px;
+      color: #002147;
+      margin-top: 10px;
+    }
+
+    .secondTagline {
+      margin-top: 300px;
+      font-size: 34px;
+      color: #002147;
+    }
+
+    .thirdTagline {
+        margin-top: 130px;
+        font-size: 34px;
+        color: #002147;
+      }
+
+    .stepsContainer {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 80px;
+      margin-right: 100px;
+    }
+
+    .step {
+      display: flex;
+      align-items: center;
+      margin-right: 50px;
+    }
+
+    .teamCircle img {
+      width: 150px; /* Adjust the size as needed */
+      height: 150px; /* Adjust the size as needed */
+      object-fit: cover; /* Maintain aspect ratio and cover the container */
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+    }
+
+    .circle {
+      width: 50px;
+      height: 50px;
+      background-color: #002147;
+      border-radius: 50%;
+      color: white;
+      font-size: 24px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .stepText {
+      margin-left: 10px;
+      font-size: 18px;
+    }
+
+    .teamContainer {
+      display: flex;
+      justify-content: center;
+      margin-top: 50px;
+    }
+
+    .teamMember {
+      margin: 0 20px;
+      text-align: center;
+    }
+
+    .memberName {
+      font-size: 18px;
+      color: #002147;
+    }
+
+    .contactInfo {
+      font-size: 18px;
+      color: #002147;
+      margin-top: 50px;
+      text-align: center;
+    }
+
+    .contactInfo span {
+      color: #002147;
+      font-weight: bold;
+    }
+
+    .buttonContainer {
+        width: 100%;
+        text-align: right;
+        padding: 20px; /* Add padding to create space */
+        box-sizing: border-box;
+    }
+    
+    
+    .button {
+      background-color: #002147;
+      color: white;
+      padding: 15px 30px;
+      font-size: 18px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .button:hover {
+      background-color: #00468B;
+    }
+
+    h1 {
+        color: #00468B;
+        font-size: 55px;
+      }
+  </style>
+</head>
+<body>
+  <div class="lcontainer">
+    <div class="title">
+      <h1>GovGenius</h1>
+      <p class="tagline">Guiding You with Personalized Government Schemes with Sense</p>
+      <p class="description">SchemeSense is your trusted guide to unlocking the benefits of government schemes in India. Our platform utilizes advanced technology to deliver personalized recommendations tailored to your needs and category.</p>
+      <form action="/main" method="POST">
+        <button type="submit" class="beginButton">Let's Begin !!!</button>
+      </form>
+     <p class="secondTagline">How it Works ??</p>
+      <p class="description">3 Simple Steps</p>
+      <div class="stepsContainer">
+        <div class="step">
+          <div class="circle">1</div>
+          <div class="stepText">Input your Information</div>
+        </div>
+        <div class="step">
+          <div class="circle">2</div>
+          <div class="stepText">Get Customized Recommendation</div>
+        </div>
+        <div class="step">
+          <div class="circle">3</div>
+          <div class="stepText">Explore more</div>
+        </div>
+      </div>
+      <p class="thirdTagline">Our Team</p>
+      <div class="teamContainer">
+        <div class="teamMember">
+          <div class="teamCircle"><img src="{{ url_for('static', filename='Devesh.jpeg') }}" alt="Devesh"></div>
+          <p class="memberName">Devesh Bhatia</p>
+        </div>
+        <div class="teamMember">
+          <div class="teamCircle"><img src="{{ url_for('static', filename='Piyush.jpeg') }}" alt="Piyush"></div>
+          <p class="memberName">Piyush Dixit</p>
+        </div>
+        <div class="teamMember">
+          <div class="teamCircle"><img src="{{ url_for('static', filename='Tanish.jpeg') }}" alt="Tanish"></div>
+          <p class="memberName">Tanish Dongre</p>
+        </div>
+      </div>
+      <p class="contactInfo">
+        Feel free to reach out to us at <span>7756040877</span> for any inquiries or assistance.
+      </p>
+    </div>
+
+  </div>
+</body>
+</html>
